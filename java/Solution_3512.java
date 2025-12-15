@@ -1,5 +1,3 @@
-package acceptance;
-
 public class Solution_3512 {
 	
 	/**
