@@ -25,4 +25,20 @@ public class Solution_938 {
 	    
 	}
 
+    // Efficient way as it only checks the nodes of the tree that is in range
+	public int rangeSumBSTEfficient(TreeNode root, int low, int high) {
+	    
+	    if(root == null) return 0;
+	
+	    if (root.val >= low && root.val <= high) {
+	    	return root.val
+	    			+ rangeSumBSTEfficient(root.left, low, high)
+	    			+ rangeSumBSTEfficient(root.right, low, high);
+	    } else if (root.val < low) {
+	    	return rangeSumBSTEfficient(root.right, low, high);
+	    } else {
+	    	return rangeSumBSTEfficient(root.left, low, high);
+	    }
+	    
+	}
 }
